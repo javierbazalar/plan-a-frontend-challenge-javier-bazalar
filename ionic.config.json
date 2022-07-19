@@ -1,0 +1,7 @@
+{
+  "name": "plan-a-frontend-challenge-javier-bazalar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
