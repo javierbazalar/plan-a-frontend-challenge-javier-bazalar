@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-item>
+      <ion-input placeholder="Email" formControlName="email" type="email" required="true"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      Email is required.
+    </span>
+    <ion-item>
+      <ion-input placeholder="User" formControlName="username" type="text" required="true"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.username.errors?.required">
+      User is required.
+    </span>
+    <ion-item>
+      <ion-input placeholder="Password" formControlName="password" type="password" minlength="6" required="true"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+      Password is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
+      Password should be min 6 chars long.
+    </span>
+    <ion-button type="submit" expand="full" color="primary" [disabled]=isValidForm>Log In</ion-button>
+  </form>
+</ion-content>

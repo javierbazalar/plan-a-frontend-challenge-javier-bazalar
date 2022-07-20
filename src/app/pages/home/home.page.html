@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Latest Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let movie of listMovies; let i = index">
+    <ion-card class="ios hydrated">
+      <img class="img-movie" src="https://www.themoviedb.org/t/p/w220_and_h330_face/{{movie.poster_path}}">
+      <ion-card-header class="ion-inherit-color ios hydrated">
+        <ion-card-subtitle role="heading" aria-level="3" class="ion-inherit-color ios hydrated">
+          {{movie.release_date}}
+        </ion-card-subtitle>
+        <ion-card-title role="heading" aria-level="2" class="ion-inherit-color ios hydrated">
+          {{movie.original_title}}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="ios card-content-ios hydrated">
+        {{movie.overview}}
+      </ion-card-content>
+    </ion-card>
+</ion-item>
+</ion-content>
